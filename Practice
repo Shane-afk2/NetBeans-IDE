@@ -1,0 +1,32 @@
+public class PDC extends Paper
+{
+   public PDC(String name)
+   {
+       super(name);
+   }
+    
+    protected String intro()
+    {
+        String content = "PDC-SC";
+        return content;
+    }
+}
+
+
+
+public abstract class Paper 
+{
+    private String lecturer;
+    
+    public Paper (String name)
+    {
+        this.lecturer = name;
+    }
+
+    public String getLecturer() 
+    {
+        return lecturer;
+    }
+    
+    protected abstract String intro();
+}
