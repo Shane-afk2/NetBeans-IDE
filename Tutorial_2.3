@@ -1,0 +1,50 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ */
+
+package com.mycompany.tutorial_2;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.HashMap;
+
+
+
+/**
+ *
+ * @author shane
+ */
+public class Tutorial_2 
+{
+
+    public static void main(String[] args) throws IOException
+    {
+        BufferedReader bfr = null;
+        PrintWriter pw = null;
+        try
+        {
+            bfr = new BufferedReader(new FileReader("./resources/T02_scores.txt"));
+            pw = new PrintWriter("./resources/Tutorial_2/T02_students.txt");
+            String line = null;
+            HashMap students = new HashMap(); 
+            while((line = bfr.readLine())!=null)            
+            {
+                
+                pw.write(line + "\n");
+                  
+            }
+            pw.println();
+            bfr.close();
+            pw.close();
+            
+        }
+        catch(FileNotFoundException e)
+        {
+            System.out.println("File not fount :(");
+        } 
+        
+    }
+}
